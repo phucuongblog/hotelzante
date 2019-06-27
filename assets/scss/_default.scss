@@ -1,0 +1,297 @@
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 transparent;
+  border-color: #ddd;
+}
+button.active.focus,
+button.active:focus,
+button.focus,
+button.focus:active,
+button:active:focus,
+button:focus {
+  outline: 0 !important;
+  outline-offset: 0  !important;
+  background-image: none  !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none  !important;
+  background: transparent!important;
+}
+@font-face {
+	@include font-face(400,normal);
+	src: url("../fonts/lato/lato-regular.ttf");
+}
+@font-face {
+	@include font-face(400,italic);	
+	src: url("../fonts/lato/lato-italic.ttf");
+}
+@font-face {
+	@include font-face(500,normal);
+	src: url("../fonts/lato/lato-medium.ttf");
+}
+@font-face {
+	@include font-face(500,italic);
+	src: url("../fonts/lato/lato-mediumitalic.ttf");
+}
+@font-face {
+	@include font-face(700,normal);
+	src: url("../fonts/lato/lato-bold.ttf");
+}
+@font-face {
+	@include font-face(700,italic);
+	src: url("../fonts/lato/lato-bolditalic.ttf");
+}
+@font-face {
+	@include font-face(900,normal);
+	src: url("../fonts/lato/lato-black.ttf");
+}
+@font-face {
+	@include font-face(900,italic);
+	src: url("../fonts/lato/lato-blackitalic.ttf");
+}
+/*--------------------------
+Nunito
+--------------------------*/
+@font-face {
+	@include font-face1(400,normal);
+	src: url("../fonts/nunito/Nunito-Regular.ttf");
+}
+@font-face {
+	@include font-face1(400,italic);	
+	src: url("../fonts/nunito/Nunito-Italic.ttf");
+}
+@font-face {
+	@include font-face1(700,normal);
+	src: url("../fonts/nunito/Nunito-Bold.ttf");
+}
+@font-face {
+	@include font-face1(700,italic);
+	src: url("../fonts/nunito/Nunito-BoldItalic.ttf");
+}
+@font-face {
+	@include font-face1(800,normal);
+	src: url("../fonts/nunito/Nunito-ExtraBold.ttf");
+}
+@font-face {
+	@include font-face1(800,italic);
+	src: url("../fonts/nunito/Nunito-ExtraBoldItalic.ttf");
+}
+@font-face {
+	@include font-face1(900,normal);
+	src: url("../fonts/nunito/Nunito-Black.ttf");
+}
+@font-face {
+	@include font-face1(900,italic);
+	src: url("../fonts/nunito/Nunito-BlackItalic.ttf");
+}
+/*--------------------------
+Roboto
+--------------------------*/
+@font-face {
+	@include font-face2(400,normal);
+	src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+	@include font-face2(400,italic);	
+	src: url("../fonts/Roboto/Roboto-Italic.ttf");
+}
+@font-face {
+	@include font-face2(700,normal);
+	src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+@font-face {
+	@include font-face2(700,italic);
+	src: url("../fonts/Roboto/Roboto-BoldItalic.ttf");
+}
+@font-face {
+	@include font-face2(500,normal);
+	src: url("../fonts/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+	@include font-face2(500,italic);
+	src: url("../fonts/Roboto/Roboto-MediumItalic.ttf");
+}
+a:link {
+	text-decoration: none;
+	transition: 0.3s;
+}
+.site-content {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	border-bottom: 1px solid #f2f2f2;
+	@media screen and (max-width: 991px) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	@media screen and (min-width: 992px) and (max-width: 1200px) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+.main-title {
+	font-size: 32px;
+	letter-spacing: 0.5px;
+	font-family: "Nunito", sans-serif;
+	color: $gray2;
+	font-weight: 800;
+	line-height: 1.3;
+	@media screen and (max-width: 991px) {
+		font-size: 21px;
+	}
+}
+.desc {
+	font-size: 18px;
+	margin: 10px 0;
+	@media screen and (max-width: 991px) {
+		font-size: 16px;
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Nunito";
+}
+/*----------------------------
+.hidden-element
+----------------------------*/
+.hidden-element {
+	position: relative;
+	@media screen and (max-width: 767px) {
+		max-height: 220px;
+		overflow: hidden;
+		&::before {
+		    content: "";
+		    display: block;
+		    height: 120px;
+		    @include absolute(null,0,0,null);
+		    width: 100%;
+		    z-index: 2;
+		    background: linear-gradient(rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%, #fff);
+		}
+		&.active {
+			max-height: 100%;
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
+/*----------------------------
+.show-more
+----------------------------*/
+a.show-more {
+	display: block;
+	padding: 15px 0 0;
+	text-decoration: none;
+	color: #666;
+	position: relative;
+	&::after {
+		content: "\f107";
+		font-family: FontAwesome;
+		display: inline-block;
+		margin-left: 5px;
+	}
+	@media screen and (min-width: 768px) {
+		display: none;
+	}
+}
+/*----------------------------
+.show-less
+----------------------------*/
+a.show-less {
+	@extend a.show-more;
+	display: none;
+	&::after {
+		content: "\f106";
+	}
+}
+/*--------------------------
+.effect-image1
+--------------------------*/
+.effect-image1 {
+	position: relative;
+	overflow: hidden;
+	a {
+		display: flex!important;
+		position: relative;
+		overflow: hidden;
+		img {
+			@include image(100%);
+			transition: 0.3s;
+			transform: scale(1.06);
+		}
+	}
+	&:hover {
+		a {
+			img {
+				transform: translate3d(3%,0,0) scale(1.06);
+			}
+		}
+	}
+}
+/*-----------------------------
+.effect-image2
+-----------------------------*/
+.effect-image2 {
+	position: relative;
+	overflow: hidden;
+	a {
+		display: flex!important;
+		position: relative;
+		overflow: hidden;
+		&::before {
+			content: "";
+			background: $gradient;
+			@include absolute(0,0,0,0);
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.5s;
+			z-index: 1;
+		}
+		&::after {
+			content: "\f0b2";
+		    font-family: FontAwesome;
+		    width: 36px;
+		    height: 36px;
+		    display: inline-block;
+		    line-height: 36px;
+		    text-align: center;
+		    border-radius: 3px;
+		    font-size: 18px;
+		    background: #fff;
+		    color: #a4a4a4;
+		    @include absolute(50%,null,50%,null);
+		    transform: translate(-50%, -50%);
+		    z-index: 2;
+		    opacity: 0;
+		    visibility: hidden;
+		    transition: 0.5s;
+		}
+		img {
+			@include image(100%);
+			transition: 0.3s;
+		}
+	}
+	&:hover {
+		a {
+			&::after {
+				opacity: 1;
+				visibility: visible;
+			}
+			&::before {
+				visibility: visible;
+				opacity: 0.3;
+			}
+			img {
+				transform: scale(1.06);
+			}
+		}
+	}
+}
